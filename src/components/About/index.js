@@ -4,11 +4,15 @@ import {Stack,Button} from '@mui/material/';
 import Container from '@mui/material/Container';
 import SendIcon from '@mui/icons-material/Send';
 import Typography from '@mui/material/Typography';
+import Dashboard from "../Dashboard"
+
 
 const Content = () =>{
     return(
+      <>
+      <Dashboard/>
         <Container>
-          <Typography variant="h2" gutterBottom>
+          <Typography variant="h2" gutterBottom sx={{ mt:3, }}>
             Halaman About
           </Typography>
         <Box sx={{ my: 2, mt:6 }}>
@@ -32,6 +36,7 @@ const Content = () =>{
           {/* <Button href="/blog" color="inherit">Blog</Button> */}
         </Stack>
       </Container>
+      </>
 
     )
 }

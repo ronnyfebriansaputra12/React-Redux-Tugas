@@ -18,25 +18,39 @@ const ListKontak = () =>{
     },[dispatch])
 
     return(
-        // <Dashboard/>
+        <>
+        <Dashboard/>
+            <div style={{ padding:'50px' }}>
+                <h2>List Cars</h2>
+                <hr/>
+                {getListKontakResult ? (
+                    getListKontakResult.map((data)=>{
+                        return(
+                            <div className="container">
+                                <table className="table table-hover">
+                                <tbody>
+                                    
+                                    <tr key={data.id}>
+                                        <td>Plat Nomor : {data.plate}</td>
+                                        <td>Merek : {data.manufacture}</td>
+                                        <td>Rental Perhari : {data.rentPerDay}</td>
+                                        <td>Kapasitas : {data.capacity}</td>
+                                    </tr>
+                                </tbody>
+                                    {/* <p key={data.id}>Plat Nomor = {data.plate} {data.manufacture} || Rental Per Hari = {data.rentPerDay}</p> */}
+                                </table>
 
-        <div style={{ padding:'50px' }}>
-            <h2>List Contact</h2>
-            <hr/>
-            {getListKontakResult ? (
-                getListKontakResult.map((kontak)=>{
-                    return(
-                        <p key={kontak.id}>{kontak.nama} - {kontak.nohp}</p>
-
-                    )
-                })
-            ) : getListKontakLoading ? (
-                <p>Loading</p>
-            ) : (
-                <p>{getListKontakError ? getListKontakError : "Data Kosong"}</p>
-            )}
-        
-        </div>
+                            </div>
+                        )
+                    })
+                ) : getListKontakLoading ? (
+                    <p>Loading</p>
+                ) : (
+                    <p>{getListKontakError ? getListKontakError : "Data Kosong"}</p>
+                )}
+            
+            </div>
+        </>
     )
 }
 

@@ -18,7 +18,7 @@ export const getListKontak = () =>{
         //get API
         axios({
             method:'GET',
-            url :'http://localhost:3004/kontaks',
+            url :'https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json',
             timeout : 120000
         }).then((response) =>{
             //Berhasil get APi

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import logo from "../../logo.svg";
 import "../../App.css";
+import Dashboard from "../Dashboard"
 
 function Blog() {
   const [imageFile, setImageFile] = useState(logo);
@@ -18,21 +19,24 @@ function Blog() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={imageFile} className="App-logo" alt="logo" />
-        <input
-          ref={fileRef}
-          type="file"
-          placeholder="Gambar"
-          onChange={handleChange}
-        ></input>
+    <>
+    <Dashboard/>
+      <div className="App">
+        <header className="App-header">
+          <img src={imageFile} className="App-logo" alt="logo" />
+          <input
+            ref={fileRef}
+            type="file"
+            placeholder="Gambar"
+            onChange={handleChange}
+          ></input>
 
-        <a className="btn btn-primary" href="/dashboard">
-            Back To Dashboard
-        </a>
-      </header>
-    </div>
+          <a className="btn btn-primary" href="/dashboard">
+              Back To Dashboard
+          </a>
+        </header>
+      </div>
+    </>
   );
 }
 export default Blog;

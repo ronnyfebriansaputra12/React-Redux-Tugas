@@ -137,9 +137,9 @@ const Dashboard = () => {
           </Box> */}
 
           <Stack direction="row" spacing={2} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button color="inherit"><Link to='/about'>About</Link></Button>
-            <Button href="/blog" color="inherit">Blog</Button>
-            <Button href="/list-kontak" color="inherit">List Kontak</Button>
+            <Link to={"/about"}><Button variant="text" sx={{ color:'white' }}>About</Button></Link>
+            <Link to={"/blog"}><Button variant="text" sx={{ color:'white' }}>Blog</Button></Link>
+            <Link to={"/list-cars"}><Button variant="text" sx={{ color:'white' }}>List Cars</Button></Link>
           </Stack>
 
           <Box sx={{ flexGrow: 0 }}>
