@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Dashboard, Login, Protected, About, Blog, ListKontak } from './components';
+
 
 function App() {
+
+  const [name, setname] = useState('ronny')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Dashboard/>
+      <Login/>
+      <Protected/>
+      <About/>
+      <Blog/>
+      <ListKontak name={name}/>
+    </>
   );
 }
 
-export default App;
+export {Dashboard,Login, Protected, About, Blog, ListKontak}
